@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.visible {
+  opacity: 1;
+}
+
+section{
+  opacity: 0;
+  transition: opacity 2s ease-out
+}
+
+
+.slideLeft {
+  animation: slideLeft 2s ease-in-out;
+}
+.slideRight {
+  animation: slideRight 2s ease-in-out;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-40%);
+    
+}
+  100% {
+    transform: translateX(0);
+    
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(40%);
+    
+}
+  100% {
+    transform: translateX(0);
+    
+  }
+}
+
+
+nav {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1rem;
+  color: aliceblue;
+}
+
+nav a {
+  text-decoration: none;
+  color: aliceblue;
+  margin-inline: 1rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.navbar .lyen a:hover {
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.navbar .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  min-height: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.navbar .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.navbar .dropdown-content a:hover {
+  background-color: #ddd;
+}
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown-content:hover {
+  display: block;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  margin-right: 1rem;
+}
+.buttons a:first-child {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.buttons a:last-child {
+  color: white;
+  border: 1px solid #0056b3;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.buttons a:hover {
+  background-color: #0056b3;
+}
+
+.hero {
+  opacity: 1;
+  transition: opacity 5s ease-in-out;
+  min-height: 100vh;
+}
+
+.hero img {
+  width: 100vw;
+  height: 100vh;
+}
+
+.heroContent {
+  z-index: 1;
+  position: absolute;
+  top: 40vh;
+  margin-inline: 1rem;
+  padding: 1rem;
+  color: aliceblue;
+  width: 55vw;
+}
+
+.heroContent h2 {
+  font-size: 4rem;
+}
+.heroContent p {
+  font-size: 1rem;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide.active {
+  opacity: 1;
+}
+
+
+
+/* Popular Section */
+
+.popular {
+  min-height: 100vh;
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+.popularHead {
+  display: flex;
+  justify-content: space-between;
+  padding:0 0 1.5rem 0;
+}
+
+.popularHead p,a{
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  }
+
+
+.productCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popularItem {
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+}
+
+.popularItem img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  padding: 1rem;
+  transition: transform 0.8s ease-in-out;
+}
+
+.popularItem img:hover {
+  transform: scale(1.17);
+}
+
+.popularItemContent {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.popularItemContent .price {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.popularItemContent h2 {
+  font-size: 1.25rem;
+}
+.popularItemContent p {
+  font-size: 0.8rem;
+}
+.popularItemContent .nameNCart {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+input[value="Add to cart"] {
+  border: none;
+  background-color: rgb(82, 7, 230);
+  color: white;
+  border-radius: 2px;
+  padding: 0.4em 0.7em;
+  cursor: pointer;
+}
+
+input[value="Add to cart"]:hover {
+    background-color: rgba(81, 7, 230, 0.76);
+  
+  }
+  
+
+  .discount {
+    position: relative;
+    height: 100vh;
+  }
+  .overlay{
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.466);
+    height: 60vh;
+    width: 100vw;
+  }
+  .discountContent{
+    position:absolute;
+    top: 15%;
+    left:5%;
+    color: white;
+  }
+
+  .discountContent h2{
+    font-size: 4rem;
+  }
+  .discountContent button{
+    display: block;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    padding: 1em 2em;
+    margin-top: 1rem;
+    color: white;
+    transition: background-color 0.7s ease-in-out;
+  }
+  .discountContent button:hover{
+    background-color: #007bff69;
+  
+  }
+  .discountContent div{
+    display: inline-block;
+  }
+  .time{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .discountItem{
+    display: none;
+  }
+
+  .discountItem.active{
+    display: block;
+  }
+
+
+
+  
+/* advice and footer */
+  .advice{
+    display: flex;
+    background-color: #ccc;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .adviceItem{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+
+  }
+
+  .advice img{
+    width: 40px;
+    margin-right: 1rem;
+  }
+
+  .advice div{
+    display: flex;
+  }
+
+  .advice h2{
+    font-size: 1rem;
+  }
+
+  .advice p{
+    font-size: 0.6rem;
+    color: #aaa;
+  }
+
+  .advice .adviceContent{
+    display: block;
+  }
+
+
+  .discount img{
+    object-fit: cover;
+    height: 60vh;
+    width: 100vw;
+
+  }
+
+
+  footer{
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    color: #000000c7;
+    width: 100vw;
+    padding: 2rem;
+    border-top: 1px solid #ccc;
+
+  }
+
+  footer li,P{
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin-bottom: 1em;
+  }
+
+  footer h2{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .signup input{
+    padding: 0.8em 1em;
+    /* border: none; */
+    border:  1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+  }
+.input-container{
+  position: relative;
+}
+  .signup button{
+    padding: 0.8em 1em;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    position: absolute;
+    background-color: #007bff;
+    top: 0;
+    left:70%;
+    color: #fff;
+
+  }
+  .signup button:hover{
+    background-color: #007bffac;
+
+  }
+
